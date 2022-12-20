@@ -1,0 +1,63 @@
+<app-navhome></app-navhome>
+
+
+<section class="py-5">
+
+    <div class="container">
+
+
+        <div class="card">
+            <div class="card-body p-5">
+                <div *ngFor="let hotel of hoteles">
+                    <div *ngIf="hotel.id==id">
+                        <h1 class="text-center mb-5">{{hotel.nombre}}</h1>
+                        <h4 class="card-title mb-3">Direcci&oacute;n: <strong
+                                class="text-muted">{{hotel.direccion}}</strong></h4>
+                        <h4 class="card-title mb-3">Tel&eacute;fono: <strong class="text-muted"></strong>
+                            {{hotel.telefono}}</h4>
+                        <h4 class="card-title mb-3">Email: <strong class="text-muted">{{hotel.email}}</strong> </h4>
+                        <h4 class="card-title mb-3">Estrellas: <strong class="text-muted">{{hotel.estrellas}}<i
+                                    class="bi-star-fill text-warning"></i></strong> </h4>
+
+                    </div>
+
+                </div>
+
+                <h1 class="text-center mt-5 mb-5">Habitaciones</h1>
+
+                <div class="row mb-2">
+                    <div class="col-md-6" *ngFor="let habitacion of habitaciones">
+                        <div
+                            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <h3 class="mb-2">{{habitacion.nombre}}</h3>
+
+                                <h6>Precios</h6>
+                                <div class="mb-0 text-muted"><strong class="text-dark">Temporada alta:</strong>
+                                    {{habitacion.precioAlta|currency: 'COP ':true:'2.0'}}</div>
+                                <div class="mb-3 text-muted"><strong class="text-dark">Temporada baja:</strong>
+                                    {{habitacion.precioBaja|currency: 'COP ':true:'2.0'}}</div>
+                                <h6>Descripcion</h6>
+                                <p class="card-text mb-auto">{{habitacion.descripcion}}</p>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <svg class="bd-placeholder-img" width="200" height="250"
+                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%"
+                                        fill="#eceeef" dy=".3em"></text>
+                                </svg>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<app-footerhome></app-footerhome>

@@ -1,0 +1,80 @@
+<app-navadmin></app-navadmin>
+<app-sidebar></app-sidebar>
+
+<!--Contenedor principal-->
+<div class="container-fluid">
+
+    <div class="main-content mt-5 pt-4 ">
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">{{titulo}}</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a [routerLink]="['/admin']">Inicio</a></li>
+                <li class="breadcrumb-item"><a [routerLink]="['/admin/habitaciones']">Tipos Habitacion</a></li>
+                <li class="breadcrumb-item active">{{titulo}}</li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-6 offeset-lg-3">
+            <div class="card ">
+                <div class="card-body text-center">
+                    <span class="titulo"></span>
+                    <div class="container">
+
+                        <div *ngIf="loading" class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <span *ngIf="submitted && crearHabitacion.invalid" class="text-danger">Todos los campos son
+                            obligatorios</span>
+                        <form [formGroup]="crearHabitacion" (submit)="agregarEdictarHabitacion()" class="mt-3">
+
+                            <div class="mb-3 text-start fs-4">
+                                <label for="selecHoteles" class="form-label">Hoteles</label>
+                                <select class="form-select form-select-lg" formControlName="selecHoteles">
+                                    <option selected value="">Seleccione uno</option>
+                                    <option  *ngFor="let hotel of hoteles" [ngValue]="hotel.id" >{{hotel.nombre}}</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+
+                                <input type="text" class="form-control form-control-lg" formControlName="Nombre"
+                                    placeholder="Nombre">
+
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="number" class="form-control form-control-lg" formControlName="Precioalta"
+                                    placeholder="Precio temporada alta">
+
+                            </div>
+                            <div class="mb-3">
+                                <input type="number" class="form-control form-control-lg" formControlName="Preciobaja"
+                                    placeholder="Precio temporada baja">
+
+                            </div>
+
+                            <div class="mb-3 text-start fs-5">
+                                <label for="descripcion" class="form-label">Descripcion</label>
+                                <textarea class="form-control" formControlName="descripcion" rows="3"></textarea>
+                            </div>
+
+                            <div class="mb-3 d-flex">
+
+                                <button type="button" name="" id="" class="btn btn-secondary btn-lg"
+                                    routerLink="/admin/habitaciones">Volver</button>
+                                &nbsp;
+                                <button type="submit" name="" id="" class="btn btn-primary btn-lg">Enviar</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

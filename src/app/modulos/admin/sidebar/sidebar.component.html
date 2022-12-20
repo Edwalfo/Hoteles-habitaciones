@@ -1,0 +1,51 @@
+<!--offcanvas-->
+
+<div class="offcanvas offcanvas-start bg-success sidebar-nav" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+
+    <div class="offcanvas-body p-2 ">
+        <nav class="navbar-dark ">
+            <!--lista principal sidebar-->
+            <ul class="navbar-nav fs-5 text-light">
+
+                <li>
+                    <a [routerLink]="['/admin']" class="nav-link px-5 active">
+                        <span class="me-2"><i class="bi bi-house"></i></span>
+                        <span class="text-white fw-bold">Inicio</span>
+                    </a>
+                </li>
+
+                <li class="my-1">
+                    <hr class="dropdown-divider bg-light" />
+                </li>
+                <li>
+                    <div class="fw-bold px-3 mb-3 active">
+                        Administración
+                    </div>
+                </li>
+                <li>
+                    <a [routerLink]="['/admin/hoteles']" class="nav-link px-3">
+                        <span class="me-3"><i class="bi bi-calendar3"></i></span>
+                        <span>Hoteles</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/admin/habitaciones']" class="nav-link px-3">
+                        <span class="me-3"><i class="bi bi-journal"></i></span>
+                        <span>Tipos habitacion</span>
+                    </a>
+                </li>
+               <!--  <li>
+                    <a [routerLink]="['/admin/usuarios']" class="nav-link px-3">
+                        <span class="me-3"><i class="bi bi-person-circle"></i></span>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+ -->
+            </ul>
+
+        </nav>
+
+    </div>
+</div>
+<!--offcanvas-->
